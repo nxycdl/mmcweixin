@@ -1,5 +1,8 @@
 <template>
-  <div>Landdetail  {{id}}</div>
+  <div>
+    <div>Landdetail  {{id}}</div>
+    <div>Landdetail  {{$route.query.id}}</div>
+  </div>
 </template>
 
 <script>

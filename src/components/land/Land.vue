@@ -7,57 +7,22 @@
       <Split/>
       <cell-box is-link>
         二号林地
-
-
-
-
-
-
-
       </cell-box>
       <Split/>
       <cell-box is-link>
         三号林地
-
-
-
-
-
-
-
       </cell-box>
       <Split/>
       <cell-box is-link>
         四号林地
-
-
-
-
-
-
-
-      </cell-box>
+   </cell-box>
       <Split/>
       <cell-box is-link link="https://vux.li">
         五号林地
-
-
-
-
-
-
-
       </cell-box>
       <Split/>
-      <cell-box title="七号林地" is-link :link="{path: '/landdetail',params: '{userId: 1}'}">
+      <cell-box is-link :link="{path: '/landdetail',query: {id: 1}}">
         六号林地
-
-
-
-
-
-
-
       </cell-box>
       <Split/>
       <cell title="七号林地" is-link link="/landdetail?id=8">
