@@ -5,6 +5,7 @@ import Land from '../components/land/Land.vue';
 import Project from '../components/project/Project.vue';
 import My from '../components/my/my.vue';
 import Landdetail from '../components/landdetail/Landdetail.vue';
+import ProjectDetail from '../components/project/ProjectDetail.vue';
 
 Vue.use(Router);
 let routes = [
@@ -37,6 +38,11 @@ let routes = [
     path: '/my',
     name: 'my',
     component: My
+  },
+  {
+    path: '/projectDetail',
+    name: 'projectDetail',
+    component: ProjectDetail
   }
 ];
 

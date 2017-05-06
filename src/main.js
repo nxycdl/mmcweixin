@@ -6,9 +6,11 @@ import VueRouter from 'vue-router';
 import App from './App';
 import router from './router';
 import Vuex from 'vuex';
+import {AjaxPlugin} from 'vux';
 
 Vue.use(VueRouter);
 Vue.use(Vuex);
+Vue.use(AjaxPlugin);
 
 FastClick.attach(document.body);
 

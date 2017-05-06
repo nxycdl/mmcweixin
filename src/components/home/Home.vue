@@ -7,7 +7,8 @@
     <scroller lock-x height="-320" @on-scroll-bottom="onScrollBottom" @on-scroll="onscroll" ref="scrollerBottom"
               :scroll-bottom-offst="200">
       <div class="box2">
-        <Item v-for="(data,index) in list" key="index" :title="data.title"></Item>
+        <Item v-for="(data,index) in list" key="index" :title="data.title" :time="data.date"
+              :author="data.author"></Item>
       </div>
     </Scroller>
 

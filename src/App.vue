@@ -10,6 +10,11 @@
 
   export default {
     name: 'app',
+    props: {
+      avatar: {
+        type: String
+      }
+    },
     data() {
       return {
         title: 'This is header'

@@ -13,11 +13,11 @@
     </div>
     <Divider></Divider>
     <div class="subtext">
-      <div class="author">
-        <span>管理员</span>
+      <div class="author" :style="authorStyle">
+        <span>{{author}}</span>
       </div>
-      <div class="time">
-        <span>20120101 23:23:23</span>
+      <div class="time" :style="timeStyle">
+        <span>{{time}}</span>
       </div>
     </div>
     <div class="itemfooter">
@@ -33,6 +33,18 @@
   export default {
     props: {
       title: {
+        type: String
+      },
+      author: {
+        type: String
+      },
+      authorStyle: {
+        type: Object
+      },
+      timeStyle: {
+        type: Object
+      },
+      time: {
         type: String
       },
       leftIconPro: {
