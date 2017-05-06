@@ -22,4 +22,8 @@ new Vue({
   template: '<App/>',
   components: {App}
 }).$mount('#app-box');
+router.beforeEach((to, from, next) => {
+  console.log('route', to, from);
+  next();
+});
 

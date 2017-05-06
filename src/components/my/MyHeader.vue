@@ -1,13 +1,13 @@
 <template>
   <div class="bg">
 
-    <div class="avatar" :style="{backgroundImage:'url(' + avatar+')'}">
-
+    <div class="avatar">
+      <img :src=weixinUserInfo.headimgurl width="60px" height="60px" style="border-radius:50%">
     </div>
 
     <div class="info">
       <div>
-        <span>{name}</span>
+        <span>{{weixinUserInfo.nickname}}</span>
       </div>
       <div class="tel">
         <icon name="tablet" style="line-height: 1.6;margin-top: 4px" color="#fff" class="alert"
@@ -27,22 +27,18 @@
   import Icon from 'vue-awesome/components/Icon';
   export default {
     props: {
-      avatar: {
-        type: String
-      },
-      avatarbgimage: {
+      weixinUserInfo: {
         type: Object
       },
       color: {
         type: String
-      },
-      name: {
-        type: String
       }
     },
+    data() {
+      return {};
+    },
     created() {
-      console.log('avatar' + this.avatar);
-      console.log('name' + this.name);
+      console.log(this.weixinUserInfo);
     },
     components: {
       Icon
@@ -65,7 +61,6 @@
   .avatar {
     width: 60px;
     height: 60px;
-    border-radius: 50%;
   / / background-color: red;
   / / background-image: url("http://dummyimage.com/100X100/f279d4)");
   }

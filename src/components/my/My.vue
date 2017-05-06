@@ -1,13 +1,13 @@
 <template>
   <div>
     <XHeader :left-options={showBack:false} style="background-color: #0398ff" title="我的"></XHeader>
-    <MyHeader :avatar="avatar" :id="avatar" :name="avatar" color="red"></MyHeader>
+    <MyHeader :weixinUserInfo="weixinUserInfo" color="red"></MyHeader>
   </div>
 </template>
 
 <script>
   import MyHeader from '../../components/my/MyHeader.vue';
-  import Mock from 'mockjs';
+  // import Mock from 'mockjs';
   import {
     XHeader
   } from 'vux';
@@ -19,10 +19,11 @@
     },
     data() {
       return {
-        avatar: '',
+        avatar: 'http://dummyimage.com/100X100/f279d4)',
         avatarbgimage: {
           backgroundImage: 'http://dummyimage.com/100X100/f279d4)'
-        }
+        },
+        weixinUserInfo: {}
       };
     },
     components: {
@@ -30,13 +31,10 @@
       MyHeader
     },
     created() {
-      this.$http.post('http://rapapi.org/mockjs/16792/api/changeAvatar').then((response) => {
-        this.$nextTick(function () {
-          this.avatar = (Mock.mock(response)).data.result[0].uri;
-          console.log(this.avatar);
-          console.log('y');
-        });
-      });
+      let weixinUserInfo = window.JSON.parse(localStorage.getItem('weixinUserInfo'));
+      console.log('my getItem ', weixinUserInfo);
+      weixinUserInfo = window.JSON.parse(weixinUserInfo);
+      this.weixinUserInfo = weixinUserInfo;
     }
   };
 </script>
