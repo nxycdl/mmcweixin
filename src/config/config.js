@@ -3,5 +3,5 @@
  */
 module.exports = {
   serverUrl: 'http://api.westcoder.cn/',
-  isDebug: true
+  isDebug: false
 };
