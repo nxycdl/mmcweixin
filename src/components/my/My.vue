@@ -33,7 +33,7 @@
     created() {
       let weixinUserInfo = window.JSON.parse(localStorage.getItem('weixinUserInfo'));
       console.log('my getItem ', weixinUserInfo);
-      weixinUserInfo = window.JSON.parse(weixinUserInfo);
+      //weixinUserInfo = window.JSON.parse(weixinUserInfo);
       this.weixinUserInfo = weixinUserInfo;
     }
   };
