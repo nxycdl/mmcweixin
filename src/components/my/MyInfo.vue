@@ -73,6 +73,7 @@
     },
     components: {MyHeader, XHeader, XButton, Group, Cell, Split, Scroller},
     created() {
+      document.title = '课程表';
       let weixinUserInfo = window.JSON.parse(localStorage.getItem('weixinUserInfo'));
       console.log('my getItem ', weixinUserInfo);
       this.weixinUserInfo = weixinUserInfo;
