@@ -2,6 +2,13 @@
   <div>
     <XHeader :left-options={showBack:false} style="background-color: #0398ff" title="我的"></XHeader>
     <MyHeader :weixinUserInfo="weixinUserInfo" color="red"></MyHeader>
+    <Group>
+      <cell title="我的信息" is-link></cell>
+      <cell title="xx2" value="bb4" is-link></cell>
+      <cell title="xx3" value="bb4" is-link></cell>
+      <cell title="修改密码" is-link></cell>
+    </Group>
+    <x-button type="primary" action-type="button" @click.native="logout" style="background-color: #0398ff">退出</x-button>
   </div>
 </template>
 
@@ -9,7 +16,8 @@
   import MyHeader from '../../components/my/MyHeader.vue';
   // import Mock from 'mockjs';
   import {
-    XHeader
+    XHeader,
+    XButton, Group, Cell
   } from 'vux';
   export default {
     props: {
@@ -28,16 +36,25 @@
     },
     components: {
       XHeader,
-      MyHeader
+      MyHeader,
+      XButton,
+      Group,
+      Cell
     },
     created() {
       let weixinUserInfo = window.JSON.parse(localStorage.getItem('weixinUserInfo'));
       console.log('my getItem ', weixinUserInfo);
       // weixinUserInfo = window.JSON.parse(weixinUserInfo);
       this.weixinUserInfo = weixinUserInfo;
+    },
+    methods: {
+      logout() {
+        console.log('这里实现退出的操作');
+      }
     }
   };
 </script>
 
-<style>
+<style lang="less">
+
 </style>

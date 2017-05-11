@@ -3,19 +3,19 @@
     <div class="add"></div>
     <tabbar style="position: fixed">
       <tabbar-item select link="/">
-        <img class="add" src="../../assets/logo.png" alt="" slot="icon">
+        <img class="add" src="../../assets/icon_nav_button.png" alt="" slot="icon">
         <span slot="label">首页</span>
       </tabbar-item>
       <tabbar-item link="/land">
-        <img class="add" src="../../assets/logo.png" alt="" slot="icon">
+        <img class="add" src="../../assets/icon_nav_msg.png" alt="" slot="icon">
         <span slot="label">林地</span>
       </tabbar-item>
-      <tabbar-item link="/project">
-        <img class="add" src="../../assets/logo.png" alt="" slot="icon">
+      <tabbar-item link="/project" show-dot>
+        <img class="add" src="../../assets/icon_nav_article.png" alt="" slot="icon">
         <span slot="label">项目</span>
       </tabbar-item>
-      <tabbar-item link="/my">
-        <img class="add" src="../../assets/logo.png" alt="" slot="icon">
+      <tabbar-item link="/my" badge="2">
+        <img class="add" src="../../assets/icon_nav_cell.png" alt="" slot="icon">
         <span slot="label">我的1</span>
       </tabbar-item>
     </tabbar>

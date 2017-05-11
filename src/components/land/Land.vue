@@ -1,47 +1,37 @@
 <template>
   <div>
     <XHeader :left-options={showBack:false} :title="title"></XHeader>
-    <router-view></router-view>
-    <group>
-      <cell title="一号林地" value="已绘制" is-link></cell>
-      <Split/>
-      <cell-box is-link>
-        二号林地
-      </cell-box>
-      <Split/>
-      <cell-box is-link>
-        三号林地
-      </cell-box>
-      <Split/>
-      <cell-box is-link>
-        四号林地
-   </cell-box>
-      <Split/>
-      <cell-box is-link link="https://vux.li">
-        五号林地
-      </cell-box>
-      <Split/>
-      <cell-box is-link :link="{path: '/landdetail',query: {id: 1}}">
-        六号林地
-      </cell-box>
-      <Split/>
-      <cell title="七号林地" is-link link="/landdetail?id=8">
-        <img slot="icon" width="20" style="display:block;margin-right:5px;"
-             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=">
-      </cell>
-    </group>
+    <scroller lock-x height="-100" @on-scroll="onScroll" ref="scrollerEvent">
+      <group>
+        <!--<cell title="一号林地" is-link></cell>-->
+        <div v-for="list in mianList" is-link>
+          <cell-box is-link :link="{path: '/landdetail',query: {id: list.id} }">{{list.name}}
+          </cell-box>
+          <Split/>
+        </div>
+      </group>
+    </scroller>
 
   </div>
 </template>
 
 <script>
-  import {Divider, XHeader, Group, Cell, CellBox} from 'vux';
+  import {Divider, XHeader, Group, Cell, CellBox, Scroller} from 'vux';
   import Split from '../split/Split.vue';
   export default {
     data() {
       return {
-        title: '林地信息'
-      };
+        title: '林地信息',
+        mianList: [{name: '一号林地', id: '1'},
+          {name: '二号林地', id: '2'},
+          {name: '三号林地', id: '3'},
+          {name: '四号林地', id: '4'},
+          {name: '五号林地', id: '5'},
+          {name: '六号林地', id: '6'},
+          {name: '七号林地', id: '7'},
+          {name: '八号林地', id: '8'}]
+      }
+        ;
     },
     components: {
       Divider,
@@ -49,7 +39,8 @@
       Group,
       Cell,
       CellBox,
-      Split
+      Split,
+      Scroller
     },
     methods: {
       gotoLandDetail(_id) {
@@ -59,6 +50,9 @@
       },
       test() {
         console.log('xxxx');
+      },
+      onScroll (pos) {
+        this.scrollTop = pos.top;
       }
     }
   }

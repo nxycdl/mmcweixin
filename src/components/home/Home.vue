@@ -2,11 +2,9 @@
   <div>
     <XHeader :left-options={showBack:false} :title="title"></XHeader>
     <MySwiper></MySwiper>
-    <div>{{$route.query.code}}</div>
-    <div>{{$route.query.state}}</div>
     <MyCaption title="最新消息" @click.native="gotoTop"></MyCaption>
     <div class="gototop" @click="gotoTop" v-show="scrollTop >330"/>
-    <scroller lock-x height="-320" @on-scroll-bottom="onScrollBottom" @on-scroll="onscroll" ref="scrollerBottom"
+    <Scroller lock-x height="-320" @on-scroll-bottom="onScrollBottom" @on-scroll="onscroll" ref="scrollerBottom"
               :scroll-bottom-offst="200">
       <div class="box2">
         <Item v-for="(data,index) in list" key="index" :title="data.title" :time="data.date"
@@ -40,16 +38,16 @@
     },
     created: function () {
       let inData = this.$route.query;
-      if (inData.state === '123') {
-        // 获取微信用户;
-        let code = inData.code;
-        console.log(code);
-        console.log(serverUrl);
-        let selfUrl = serverUrl + 'mmc/index/getWeiXinUserInfo';
-        if (isDebug === true) {
-          let weixinUserInfo = '{"openid":"oA3LhwEfavbAK-4NBYqFkTK2SE74","nickname":"dl123456","sex":1,"language":"zh_CN","city":"银川","province":"宁夏","country":"中国","headimgurl":"http://wx.qlogo.cn/mmopen/Q3auHgzwzM5zdy62JK9C21aRpHHuJug7Nia1UkiaMQzXDbTwn5Nxaich5Tas99HXEPrbuiaiaKnzoOHCictdxibFSh5gQ/0","privilege":[]}';
-          localStorage.setItem('weixinUserInfo', window.JSON.stringify(weixinUserInfo));
-        } else {
+      if (isDebug === true) {
+        this.getDebugUserInfo();
+      } else {
+        if (inData.state === '123') {
+          // 获取微信用户;
+          let code = inData.code;
+          console.log(code);
+          console.log(serverUrl);
+          let selfUrl = serverUrl + 'mmc/index/getWeiXinUserInfo';
+          console.log(isDebug);
           AjaxPlugin.$http.post(selfUrl, {code: code}).then((response) => {
             if (response.status === 200 && response.data.success === true) {
               let weixinUserInfo = response.data.data;
@@ -58,7 +56,6 @@
           });
         }
       }
-      ;
     },
     components: {
       MySwiper,
@@ -91,6 +88,10 @@
       },
       onscroll(pos) {
         this.scrollTop = pos.top;
+      },
+      getDebugUserInfo() {
+        let weixinUserInfo = '{"openid":"oA3LhwEfavbAK-4NBYqFkTK2SE74","nickname":"dl123456","sex":1,"language":"zh_CN","city":"银川","province":"宁夏","country":"中国","headimgurl":"http://wx.qlogo.cn/mmopen/Q3auHgzwzM5zdy62JK9C21aRpHHuJug7Nia1UkiaMQzXDbTwn5Nxaich5Tas99HXEPrbuiaiaKnzoOHCictdxibFSh5gQ/0","privilege":[]}';
+        localStorage.setItem('weixinUserInfo', weixinUserInfo);
       }
     }
   }
