@@ -7,6 +7,8 @@
 
     <div class="info">
       <div>
+        <icon name="user-circle" style="line-height: 1.6;margin-top: 4px" color="#fff" class="alert"
+              scale="1"></icon>
         <span>{{weixinUserInfo.nickname}}</span>
       </div>
       <div class="tel">
@@ -61,11 +63,14 @@
   .avatar {
     width: 60px;
     height: 60px;
+    margin-left: 10px;
+
   / / background-color: red;
   / / background-image: url("http://dummyimage.com/100X100/f279d4)");
   }
 
   .info {
+    margin-top: 5px;
     margin-left: 5px;
     flex: 1
   }

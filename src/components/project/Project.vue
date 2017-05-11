@@ -1,7 +1,7 @@
 <template>
   <div>
     <!--<XHeader :left-options={showBack:false} style="background-color: #0398ff" title="项目"></XHeader>-->
-    <scroller lock-x height="-90" ref="scrollerBottom"
+    <scroller lock-x height="-26" ref="scrollerBottom"
               :scroll-bottom-offst="200">
       <div class="box2">
         <Item v-for="(data,index) in projectList" key="index" :title="data.title" :time="data.date"

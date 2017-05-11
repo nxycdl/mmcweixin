@@ -1,7 +1,7 @@
 <template>
   <div>
     <!--<XHeader :left-options={showBack:true} style="background-color: #0398ff" title="项目详情"></XHeader>-->
-    <scroller lock-x height="-90" ref="scrollerBottom"
+    <scroller lock-x height="-26" ref="scrollerBottom"
               :scroll-bottom-offst="200">
       <div class="box2">
         <cell title="内容1" value="标题1" is-link></cell>

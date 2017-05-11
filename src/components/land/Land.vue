@@ -1,7 +1,7 @@
 <template>
   <div>
     <!--<XHeader :left-options={showBack:false} :title="title"></XHeader>-->
-    <scroller lock-x height="-100" @on-scroll="onScroll" ref="scrollerEvent">
+    <scroller lock-x height="-46" @on-scroll="onScroll" ref="scrollerEvent">
       <group>
         <!--<cell title="一号林地" is-link></cell>-->
         <div v-for="list in mianList" is-link>

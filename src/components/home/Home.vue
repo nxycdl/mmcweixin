@@ -4,7 +4,7 @@
     <MySwiper></MySwiper>
     <MyCaption title="最新消息" @click.native="gotoTop"></MyCaption>
     <div class="gototop" @click="gotoTop" v-show="scrollTop >330"/>
-    <Scroller lock-x height="-320" @on-scroll-bottom="onScrollBottom" @on-scroll="onscroll" ref="scrollerBottom"
+    <Scroller lock-x height="-256" @on-scroll-bottom="onScrollBottom" @on-scroll="onscroll" ref="scrollerBottom"
               :scroll-bottom-offst="200">
       <div class="box2">
         <Item v-for="(data,index) in list" key="index" :title="data.title" :time="data.date"

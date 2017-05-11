@@ -2,7 +2,7 @@
   <div>
     <!--<XHeader :left-options={showBack:true} style="background-color: #0398ff" title="我的信息"></XHeader>-->
     <MyHeader :weixinUserInfo="weixinUserInfo" color="red"></MyHeader>
-    <scroller lock-x height="-166" @on-scroll="onScroll" ref="scrollerEvent">
+    <scroller lock-x height="-100" @on-scroll="onScroll" ref="scrollerEvent">
       <div class="box1">
         <Group>
           <cell title="姓名" :value=myInfo.name></cell>
