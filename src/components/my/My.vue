@@ -4,7 +4,7 @@
     <MyHeader :weixinUserInfo="weixinUserInfo" color="red"></MyHeader>
     <Group>
       <cell title="我的信息" is-link :link="{path: '/myinfo'}"></cell>
-      <cell title="我的消息" value="未读消息" is-link :link="{path:'/mettingList'}">
+      <cell title="我的消息" value="未读消息" is-link :link="{path:'/messageList'}">
         <badge text="8"></badge>
       </cell>
       <cell title="我的会议" value="未读消息" is-link :link="{path:'/mettingList'}">
