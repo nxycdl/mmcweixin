@@ -7,6 +7,7 @@ import My from '../components/my/My.vue';
 import Landdetail from '../components/landdetail/Landdetail.vue';
 import ProjectDetail from '../components/project/ProjectDetail.vue';
 import MyInfo from '../components/my/MyInfo.vue';
+import MettingList from '../components/Meeting/MeetingList.vue';
 
 Vue.use(Router);
 let routes = [
@@ -49,6 +50,11 @@ let routes = [
     path: '/myInfo',
     name: 'myInfo',
     component: MyInfo
+  },
+  {
+    path: '/mettingList',
+    name: 'mettingList',
+    component: MettingList
   }
 ];
 

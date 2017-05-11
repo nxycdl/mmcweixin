@@ -4,8 +4,12 @@
     <MyHeader :weixinUserInfo="weixinUserInfo" color="red"></MyHeader>
     <Group>
       <cell title="我的信息" is-link :link="{path: '/myinfo'}"></cell>
-      <cell title="我的消息" value="未读消息" is-link></cell>
-      <cell title="我的会议" value="未读消息" is-link></cell>
+      <cell title="我的消息" value="未读消息" is-link :link="{path:'/mettingList'}">
+        <badge text="8"></badge>
+      </cell>
+      <cell title="我的会议" value="未读消息" is-link :link="{path:'/mettingList'}">
+        <badge text="8"></badge>
+      </cell>
       <cell title="修改密码" is-link></cell>
     </Group>
     <x-button type="primary" action-type="button" @click.native="logout" style="background-color: #0398ff">退出</x-button>
@@ -16,7 +20,10 @@
   import MyHeader from '../../components/my/MyHeader.vue';
   import {
     XHeader,
-    XButton, Group, Cell
+    XButton,
+    Group,
+    Cell,
+    Badge
   } from 'vux';
   export default {
     props: {
@@ -38,7 +45,8 @@
       MyHeader,
       XButton,
       Group,
-      Cell
+      Cell,
+      Badge
     },
     created() {
       this.reSetTitleUtil.reSetTitle('我的');

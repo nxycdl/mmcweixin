@@ -5,7 +5,8 @@
       <group>
         <!--<cell title="一号林地" is-link></cell>-->
         <div v-for="list in mianList" is-link>
-          <cell-box is-link :link="{path: '/landdetail',query: {id: list.id} }">{{list.name}}
+          <cell-box is-link :link="{path: '/landdetail',query: {id: list.id} }">
+            {{list.name}}
           </cell-box>
           <Split/>
         </div>
@@ -16,7 +17,7 @@
 </template>
 
 <script>
-  import {Divider, XHeader, Group, Cell, CellBox, Scroller} from 'vux';
+  import {Divider, XHeader, Group, Cell, CellBox, Scroller, Badge} from 'vux';
   import Split from '../split/Split.vue';
   export default {
     data() {
@@ -40,7 +41,8 @@
       Cell,
       CellBox,
       Split,
-      Scroller
+      Scroller,
+      Badge
     },
     methods: {
       gotoLandDetail(_id) {
