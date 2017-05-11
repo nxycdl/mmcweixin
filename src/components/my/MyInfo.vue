@@ -78,7 +78,7 @@
       this.getDefaultWeiXinUser();
     },
     methods: {
-      myinfo (pos) {
+      onScroll (pos) {
         this.scrollTop = pos.top;
       },
       getDefaultWeiXinUser() {
