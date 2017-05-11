@@ -15,9 +15,9 @@
         <span>13895652926</span>
       </div>
     </div>
-    <div class="left" @click="gotoSetting">
+    <!--<div class="left" @click="gotoSetting">
       <icon name="angle-right"></icon>
-    </div>
+    </div>-->
   </div>
 </template>
 

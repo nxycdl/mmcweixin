@@ -3,9 +3,9 @@
     <XHeader :left-options={showBack:false} style="background-color: #0398ff" title="我的"></XHeader>
     <MyHeader :weixinUserInfo="weixinUserInfo" color="red"></MyHeader>
     <Group>
-      <cell title="我的信息" is-link></cell>
-      <cell title="xx2" value="bb4" is-link></cell>
-      <cell title="xx3" value="bb4" is-link></cell>
+      <cell title="我的信息" is-link :link="{path: '/myinfo'}"></cell>
+      <cell title="我的消息" value="未读消息" is-link></cell>
+      <cell title="我的会议" value="未读消息" is-link></cell>
       <cell title="修改密码" is-link></cell>
     </Group>
     <x-button type="primary" action-type="button" @click.native="logout" style="background-color: #0398ff">退出</x-button>
@@ -14,7 +14,6 @@
 
 <script>
   import MyHeader from '../../components/my/MyHeader.vue';
-  // import Mock from 'mockjs';
   import {
     XHeader,
     XButton, Group, Cell

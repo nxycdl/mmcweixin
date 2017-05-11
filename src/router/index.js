@@ -3,9 +3,10 @@ import Router from 'vue-router';
 import Home from '../components/home/Home.vue';
 import Land from '../components/land/Land.vue';
 import Project from '../components/project/Project.vue';
-import My from '../components/my/my.vue';
+import My from '../components/my/My.vue';
 import Landdetail from '../components/landdetail/Landdetail.vue';
 import ProjectDetail from '../components/project/ProjectDetail.vue';
+import MyInfo from '../components/my/MyInfo.vue';
 
 Vue.use(Router);
 let routes = [
@@ -43,6 +44,11 @@ let routes = [
     path: '/projectDetail',
     name: 'projectDetail',
     component: ProjectDetail
+  },
+  {
+    path: '/myInfo',
+    name: 'myInfo',
+    component: MyInfo
   }
 ];
 
