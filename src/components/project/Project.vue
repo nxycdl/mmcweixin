@@ -1,12 +1,12 @@
 <template>
   <div>
-    <XHeader :left-options={showBack:false} style="background-color: #0398ff" title="项目"></XHeader>
+    <!--<XHeader :left-options={showBack:false} style="background-color: #0398ff" title="项目"></XHeader>-->
     <scroller lock-x height="-90" ref="scrollerBottom"
               :scroll-bottom-offst="200">
       <div class="box2">
         <Item v-for="(data,index) in projectList" key="index" :title="data.title" :time="data.date"
               :author="data.fzr" :authorStyle="{color:'#AEB1FF'}" @click.native="gotoDetail(index)"
-              ></Item>
+        ></Item>
       </div>
     </Scroller>
   </div>
@@ -21,6 +21,7 @@
   export default {
     data() {
       return {
+        title: '项目',
         projectList
       };
     },
@@ -38,6 +39,9 @@
         console.log(this.$route);
         this.$router.push({path: '/projectDetail', query: {id: id}});
       }
+    },
+    created() {
+      this.reSetTitleUtil.reSetTitle(this.title);
     }
   };
 </script>
@@ -46,6 +50,7 @@
   .fade-enter-active, .fade-leave-active {
     transition: opacity .5s
   }
+
   .fade-enter, .fade-leave-active {
     opacity: 0
   }

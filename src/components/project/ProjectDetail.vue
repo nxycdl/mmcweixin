@@ -1,6 +1,6 @@
 <template>
   <div>
-    <XHeader :left-options={showBack:true} style="background-color: #0398ff" title="项目详情"></XHeader>
+    <!--<XHeader :left-options={showBack:true} style="background-color: #0398ff" title="项目详情"></XHeader>-->
     <scroller lock-x height="-90" ref="scrollerBottom"
               :scroll-bottom-offst="200">
       <div class="box2">
@@ -36,10 +36,9 @@
   export default {
     data() {
       return {
+        title: '项目详情',
         projectList,
-        id: {
-          type: String
-        }
+        id: ''
       };
     },
     components: {
@@ -48,6 +47,9 @@
       Group,
       Cell,
       Item
+    },
+    created() {
+      this.reSetTitleUtil.reSetTitle(this.title);
     }
   };
 </script>

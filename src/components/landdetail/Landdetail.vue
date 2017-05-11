@@ -1,6 +1,6 @@
 <template>
   <div>
-    <XHeader :left-options={showBack:true} :title="title"></XHeader>
+    <!--<XHeader :left-options={showBack:true} :title="title"></XHeader>-->
     <router-view></router-view>
     <scroller lock-x height="-102" @on-scroll="onScroll" ref="scrollerEvent">
       <group>
@@ -71,6 +71,7 @@
       };
     },
     created() {
+      this.reSetTitleUtil.reSetTitle(this.title);
       console.log('这里根据后台请求ID=' + this.$route.query.id);
       this.landinfo = {
         'BAA001': '林班号',

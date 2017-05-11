@@ -1,6 +1,6 @@
 <template>
   <div>
-    <XHeader :left-options={showBack:false} :title="title"></XHeader>
+    <!--<XHeader :left-options={showBack:false} :title="title"></XHeader>-->
     <scroller lock-x height="-100" @on-scroll="onScroll" ref="scrollerEvent">
       <group>
         <!--<cell title="一号林地" is-link></cell>-->
@@ -54,6 +54,9 @@
       onScroll (pos) {
         this.scrollTop = pos.top;
       }
+    },
+    created() {
+      this.reSetTitleUtil.reSetTitle(this.title);
     }
   }
   ;

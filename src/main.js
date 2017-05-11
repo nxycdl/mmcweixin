@@ -7,10 +7,12 @@ import App from './App';
 import router from './router';
 import Vuex from 'vuex';
 import {AjaxPlugin} from 'vux';
+import reSetTitleUtil from './utils/RestTitle';
 
 Vue.use(VueRouter);
 Vue.use(Vuex);
 Vue.use(AjaxPlugin);
+Vue.prototype.reSetTitleUtil = reSetTitleUtil;
 
 FastClick.attach(document.body);
 

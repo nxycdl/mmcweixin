@@ -1,6 +1,6 @@
 <template>
   <div>
-    <XHeader :left-options={showBack:true} style="background-color: #0398ff" title="我的信息"></XHeader>
+    <!--<XHeader :left-options={showBack:true} style="background-color: #0398ff" title="我的信息"></XHeader>-->
     <MyHeader :weixinUserInfo="weixinUserInfo" color="red"></MyHeader>
     <scroller lock-x height="-166" @on-scroll="onScroll" ref="scrollerEvent">
       <div class="box1">
@@ -46,6 +46,7 @@
   export default {
     data() {
       return {
+        title: '我的信息',
         myInfo: {
           'name': '张三',
           'sex': '男',
@@ -73,14 +74,17 @@
     },
     components: {MyHeader, XHeader, XButton, Group, Cell, Split, Scroller},
     created() {
-      document.title = '课程表';
-      let weixinUserInfo = window.JSON.parse(localStorage.getItem('weixinUserInfo'));
-      console.log('my getItem ', weixinUserInfo);
-      this.weixinUserInfo = weixinUserInfo;
+      this.reSetTitleUtil.reSetTitle(this.title);
+      this.getDefaultWeiXinUser();
     },
     methods: {
-      onScroll (pos) {
+      myinfo (pos) {
         this.scrollTop = pos.top;
+      },
+      getDefaultWeiXinUser() {
+        let weixinUserInfo = window.JSON.parse(localStorage.getItem('weixinUserInfo'));
+        console.log('my getItem ', weixinUserInfo);
+        this.weixinUserInfo = weixinUserInfo;
       }
     }
   }
