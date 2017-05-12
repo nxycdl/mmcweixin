@@ -7,6 +7,7 @@
   export default {
     data() {
       return {
+        title: '我的消息',
         list: [{
           src: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
           title: '领取防暑费',
@@ -47,6 +48,9 @@
       Panel,
       Group,
       Radio
+    },
+    created() {
+      this.reSetTitleUtil.reSetTitle(this.title);
     }
   }
   ;
