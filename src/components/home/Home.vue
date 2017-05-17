@@ -8,7 +8,7 @@
               :scroll-bottom-offst="200">
       <div class="box2">
         <Item v-for="(data,index) in list" key="index" :title="data.title" :time="data.date"
-              :author="data.author"></Item>
+              :author="data.author" @click.native="goToDetail(data)"></Item>
       </div>
     </Scroller>
 
@@ -56,6 +56,7 @@
           });
         }
       }
+      this.reSetTitleUtil.reSetTitle(this.title);
     },
     components: {
       MySwiper,
@@ -93,8 +94,11 @@
         let weixinUserInfo = '{"openid":"oA3LhwEfavbAK-4NBYqFkTK2SE74","nickname":"dl123456","sex":1,"language":"zh_CN","city":"银川","province":"宁夏","country":"中国","headimgurl":"http://wx.qlogo.cn/mmopen/Q3auHgzwzM5zdy62JK9C21aRpHHuJug7Nia1UkiaMQzXDbTwn5Nxaich5Tas99HXEPrbuiaiaKnzoOHCictdxibFSh5gQ/0","privilege":[]}';
         localStorage.setItem('weixinUserInfo', weixinUserInfo);
       },
-      created() {
-        this.reSetTitleUtil.reSetTitle(this.title);
+      goToDetail(data) {
+        console.log(data);
+        let params = {id: data.id};
+        console.log(params);
+        this.$router.push({path: '/homeMessageDetail', query: params});
       }
     }
   }

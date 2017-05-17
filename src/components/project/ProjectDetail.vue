@@ -1,9 +1,11 @@
 <template>
   <div>
+    <toast v-model="showPositionValue" type="text" :time="800" is-show-mask :text=toastText></toast>
     <!--<XHeader :left-options={showBack:true} style="background-color: #0398ff" title="项目详情"></XHeader>-->
-    <scroller lock-x height="-26" ref="scrollerBottom"
+    <scroller lock-x height="-53" ref="scrollerBottom"
               :scroll-bottom-offst="200">
       <div class="box2">
+
         <cell title="项目名称" :value=detail.AA01></cell>
         <cell title="建设内容" style="margin-right: 20px;" primary="content" value-align="right">
           <div slot="value">
@@ -24,8 +26,9 @@
         <cell title="施工图纸" is-link @click.native="gotoMap(1)"></cell>
         <cell title="验收报告" is-link @click.native="gotoMap(2)"></cell>
         <cell title="监理单位" :value=detail.AA11></cell>
+        <cell title="" ></cell>
       </div>
-      <toast v-model="showPositionValue" type="text" :time="800" is-show-mask :text=toastText></toast>
+
     </Scroller>
   </div>
 </template>
