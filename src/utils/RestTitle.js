@@ -9,7 +9,7 @@ var reSetTitleUtil = {
     if (/iphone|ipad|ipod/.test(mobile)) {
       var iframe = document.createElement('iframe');
       iframe.style.visibility = 'hidden';
-      // iframe.setAttribute('src', 'loading.png');
+      iframe.setAttribute('src', 'loading.png');
       var iframeCallback = function () {
         setTimeout(function () {
           iframe.removeEventListener('load', iframeCallback);
