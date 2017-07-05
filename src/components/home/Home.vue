@@ -29,7 +29,7 @@
     data() {
       return {
         image: '../../../../assets/logo.png',
-        title: '银川苗木场欢迎您',
+        title: '智慧林场欢迎您',
         list: homeData,
         onFetching: false,
         isShowTopDiv: false,
